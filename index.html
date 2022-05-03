@@ -1,0 +1,29 @@
+<!DOCTYPE html> 
+<html lang="en" > 
+<head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>cats_vs_dogs</title>
+        
+        
+</head>
+<body>
+        <div class=''>
+            <textarea id ='review' placeholder="input your tweet"> </textarea> 
+            <button id='0' type="button" onclick="handleButton()" >predict</button>
+        </div>
+        <div>
+            <div id="prediction" > </div>
+        </div> 
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js" type="text/javascript"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-tflite@0.0.1-alpha.7/dist/tf-tflite.min.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script> -->
+        <script src="word_index.json"></script>
+        <script src="model_lite_v0.tflite"></script>
+        <script src="index.js"></script>
+
+</body>
+        
+        
+</html>
