@@ -28,7 +28,9 @@ const loadModel = async () => {
         console.log(error);
     }
 };
+
 loadModel();
+
 
 
 function handleButton(){
@@ -62,9 +64,19 @@ function handleButton(){
         const sequence_tensor = tf.tensor2d(padded_sequence ,  [1,300])
         sequence_tensor.print()
         console.log(sequence_tensor.shape)
-        const pres = model.predict(sequence_tensor)
-        console.log(pres.arraySync()[0])
-        prediction.textContent = classes[pres.argMax().arraySync()[0]]
+        if(model) {
+            const pres = model.predict(sequence_tensor)
+            console.log(pres.arraySync()[0])
+            prediction.textContent = classes[pres.argMax().arraySync()[0]]
+
+        }else {
+            setTimeout(() => {
+                const pres = model.predict(sequence_tensor)
+                console.log(pres.arraySync()[0])
+                prediction.textContent = classes[pres.argMax().arraySync()[0]]
+            } , 3000 )
+        }
+        
     
     }
     convert()
